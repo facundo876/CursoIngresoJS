@@ -3,7 +3,7 @@ var porcentaje;
 var descuento;
 var precioYdescunto;
 var iva;
-iva=0.21;
+
 function mostrar()
 {
 	
@@ -12,9 +12,9 @@ function mostrar()
 	porcentaje=prompt("Ingresar porcentaje (%)");
 		porcentaje=parseInt(porcentaje);
 
-		descuento=precio/porcentaje;
+		descuento=precio*porcentaje/100;
 		precioYdescunto=precio-descuento;
-		iva=precioYdescunto*iva;
+		iva=precioYdescunto*21/100;
 
 
 	alert("El descuento es de : "+"$"+descuento+"    El precio con descuento : "+precioYdescunto);
