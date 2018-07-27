@@ -1,24 +1,28 @@
 var respuesta='si';
-var contador=0;
 var numero;
-var mayor=0;
-var menor=99999999;
+var mayor;
+var menor;
+var contador;
+
 function mostrar()
 {
 
 	while(respuesta!='no')
 	{
+		contador++;
 		numero=prompt("Ingresar numero");
 		numero=parseInt(numero);	
-		if(numero>mayor);
-		{
-			mayor=numero;
-				
-		}
-		if(numero<menor)
-		{
-			menor=numero;
-		}
+			//mayor=Math.max(numero,mayor);
+			//menor=Math.min(numero,menor);
+			if (contador==1) 
+			{
+				mayor=numero;
+				menor=numero;
+			}
+			else
+			{
+				if (numero>mayor) {}
+			}
 		respuesta=prompt("Desea continuar ?");
 	}
 
