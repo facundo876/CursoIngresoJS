@@ -1,15 +1,16 @@
 function mostrar()
-{
-var NumeroIngesado;
-var divisores=0;
-NumeroIngesado=prompt("Ingresar Numeros ");
-for(var contador=NumeroIngesado; contador>1; contador--)
-{
-	
-	if (contador) 
+{ 	
+	var numero=parseInt(prompt("Ingresar numero"));
+	var divisores;
+
+
+	for(var contador=2; contador<numero; contador++)
 	{
-		divisores++;	
+		if (numero%contador==0) 
+		{
+			console.log(contador);
+		}
 	}
-}
-alert("cantidad de divisores : "+divisores);
+
+
 }//FIN DE LA FUNCIÓN
