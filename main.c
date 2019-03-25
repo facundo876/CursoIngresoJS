@@ -1,73 +1,87 @@
 #include <stdio.h>
 #include <stdlib.h>
-// ENTREGA DE T.PRACTICO Nº1 ANTES DE 5/4/19
+#include <ctype.h>
 
-/*
-float result;
-iny n1, n2;
-n1=5;
-n2=2;
-resul=(float)n1/n2; crea un resultado en flotante se llama castear
-castea solo an n1
-*/
+int suma(y,x);
+int resta(y,x);
+int dividir(y,x);
+int multiplicar(y,x);
+int factoriar(y);
+
 int main()
 {
-   //int numero= 0;
-    //while
-    /*while (numero<10){ //hasta que numero deje de ser menor a 10
+    int numeroA, numeroB, sumar, restar, multiplicacion, factorialA, factorialB;
+    float  division;
+    char salir;
 
-        numero++;
-        printf("%d ,", numero);
-    }*/
+        do{
+            printf("Ingresar 1er operando : ");
+                scanf("%d", &numeroA);
+            printf("(A=%d)",numeroA);
+            printf("\nIngresar 2er operando : ");
+                scanf("%d", &numeroB);
+            printf("(B=%d)\n",numeroB);
 
-    //do whlie se usa cuando no sabes cuantas veses vas a repertir
-    /*do{
-    numero++;
-    printf("%d ,", numero);
-    }while(numero<10);*/
+            sumar= suma(numeroA,numeroB);// A)
 
-    //for
+            restar= resta(numeroA,numeroB);
 
-    /*for(numero=0; numero<10; numero++){
+            division= dividir(numeroA,numeroB);
 
-        printf("%d\n", (numero+1));
-    }
-    printf("%d", numero);*/
+            multiplicacion= multiplicar(numeroA,numeroB);
 
-    //Ejercicio ____________________________--_____________
+            factorialA= factoriar(numeroA);
+             factorialB= factoriar(numeroB);
 
-    /*int i, numero, promedio=0, maximo, minimo, flag=0;//
 
-    for(i=0; i<5; i++){
-        printf("Ingresar numero [%d] : ", i);
-        scanf("%d", &numero);
+            printf("El resultado de A+B es: %d\n", sumar);
+            printf("El resultado de A-B es: %d\n", restar);
+            printf("El resultado de A/B es: %.2f\n", division);
+            printf("El resultado de A*B es: %d\n", multiplicacion);
+            printf("El factorial de A es: %d y El factorial de B es: %d\n", factorialA, factorialB);
 
-        promedio=promedio+numero;
-    }
-    printf("Promedio : %d", (promedio/i));*/
-    //#ctype.h bibloteca
-    int valro, min, max, flag=0;
-    char rta;
-    do{
-        if(flag==0 || numero>max){//consepto de bandera
+            do{
+                printf("Salir : [s/n]");
+                fflush(stdin);
+                scanf("%c",&salir);
+                salir= tolower(salir);
 
-            max=numero;
-        }
-        if(flag==0 || numero<min){
-
-            min=numero;
-            flag=1;
-        }
-      //validar
-      do{
-        printf("continuar [n/s]?");
-        fflush(stdin);
-        scanf("%d", &rta);
-        rta =topper(rta);
-
-      }while(rta!='s'&& rta!='n');
-    }while(rta=='s')
+            }while(salir!='s'&& salir!='n');
+        }while(salir=='n');
 
     return 0;
 }
-//limpiar fflush( stdin );
+
+int suma(y,x){
+    int resultado;
+
+    resultado=y+x;
+    return resultado;
+}
+int resta(y,x){
+    int resultado;
+
+    resultado=y-x;
+    return resultado;
+}
+int dividir(y,x){
+    float resultado;
+
+    resultado=y/x;
+    return resultado;
+}
+int multiplicar(y,x){
+    int resultado;
+
+    resultado=y*x;
+    return resultado;
+}
+int factoriar(y){
+    int resultado, i;
+
+    for(i=1; i<=y; i++){
+        resultado= y*i;
+    }
+
+    return resultado;
+}
