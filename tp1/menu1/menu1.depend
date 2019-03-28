@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1553728739 source:c:\users\delta\desktop\menu1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1553729419 source:c:\users\delta\desktop\menu1\funciones.c
+
+1553728303 c:\users\delta\desktop\menu1\funciones.h
+
